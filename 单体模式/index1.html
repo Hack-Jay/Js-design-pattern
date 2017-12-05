@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        //惰性单体
+        var Ext = {}
+        Ext.Base = (function() {
+            var uniqinstance
+
+            function init() {
+                var a1 = 10
+                var a2 = true
+
+                var fn1 = function() {
+                    alert('fn1')
+                }
+                var fn2 = function() {
+                    alert('fn2')
+                }
+                return {
+                    attr1: a1,
+                    attr2: a2,
+                    method1: function() {
+                        return fn1()
+                    },
+                    method2: function() {
+                        return fn2()
+                    }
+                }
+            }
+            return {
+                getInstance: function() {
+                    if (!uniqinstance) {
+                        uniqinstance = init()
+                    }
+                    return uniqinstance
+                }
+            }
+        })()
+        alert(Ext.Base.getInstance().attr1)
+        Ext.Base.getInstance().method1()
+    </script>
+</body>
+
+</html>

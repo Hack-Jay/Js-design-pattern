@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+</head>
+<body>
+<script>
+    var Book= (function () {
+        var bookNum=0;
+        function checkBook(name){}
+        return function (newId,newName,newPrice) {
+            var name,price;
+            function checkId(id){}
+            this.getName= function () {};
+            this.getprice= function () {};
+            this.setName= function () {};
+            this.setPrice= function () {};
+            this.id=newId;
+            this.copy= function () {};
+            bookNum++
+            if(bookNum>100) throw new Error('We only sell 100');
+            this.setName(name);
+            this.setPrice(price);
+        }
+    })();
+    Book.prototype={
+        isJSBook:false,
+        display:function (){}
+    }
+</script>
+</body>
+</html>

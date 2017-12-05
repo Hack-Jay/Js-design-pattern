@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //单继承
+    var extend= function (target, source) {
+        for(var property in source)
+        {
+            target[property]=source[property]
+        }
+        return target;
+    }
+    //多继承
+    var min= function () {
+        var i= 1,                 //第二个参数起为被继承的对象
+            len=arguments.length,//获取参数长度
+            target=arguments[0],  //获取第一个对象为目标对象
+            arg;                  //缓存对象
+        for(;i<len;i++){
+            arg=arguments[i];     //缓存当前对象
+            for(var proterty in arg){    //遍历被继承属性
+                target[proterty]=arg[proterty];   //复制
+            }
+        }
+        return target;
+    }
+</script>
+</body>
+</html>
